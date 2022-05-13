@@ -3,17 +3,7 @@
 {% block content %}
 <h1>Лев Толстой – зеркало русской революции.</h1>
   {% for post in posts %}
-    <article>
-      <ul>
-        <li>
-          Автор: {{ post.author.get_full_name }}
-        </li>
-        <li>
-          Дата публикации: {{ post.pub_date|date:"d E Y" }}
-        </li>
-      </ul>
-    </article>
-  <p>{{ post.text }}</p>
+    {% include 'includes/card.html' %}
   {% if not forloop.last %}<hr>{% endif %}
 {% endfor %}
 {% endblock %}
