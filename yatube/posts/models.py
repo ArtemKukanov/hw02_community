@@ -23,9 +23,12 @@ class Post(models.Model):
         related_name='posts'
     )
     group = models.ForeignKey(
-        Group,
+        'Group',
         blank=True,
         null=True,
         on_delete=models.SET_NULL,
         related_name='posts'
     )
+
+    def __str__(self):
+        return self.text
